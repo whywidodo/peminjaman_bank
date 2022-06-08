@@ -5,7 +5,7 @@ import pickle
 
 model = pickle.load(open('./Model/ML_Model.pkl', 'rb'))
 
-favImage = Image.open("favicon.png")
+favImage = Image.open("favicon.ico")
 st.set_page_config(
     page_icon=favImage,
     page_title="Persetujuan Peminjaman Bank | IF20D"
