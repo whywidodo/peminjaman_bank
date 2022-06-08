@@ -5,7 +5,11 @@ import pickle
 
 model = pickle.load(open('./Model/ML_Model.pkl', 'rb'))
 
-st.set_page_config(page_title="Persetujuan Peminjaman Bank | IF20D")
+favImage = Image.open("favicon.png")
+st.set_page_config(
+    page_icon=favImage,
+    page_title="Persetujuan Peminjaman Bank | IF20D"
+)
 
 
 def run():
