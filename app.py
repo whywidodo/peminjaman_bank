@@ -66,14 +66,14 @@ def run():
 
         # Pendapatan Bulanan Pemohon
         bln_pendapatan = st.number_input(
-            "Pendapatan Bulanan Pemohon ($)", value=0)
+            "Pendapatan Bulanan Pemohon (Rp)", value=0)
 
         # Pendapatan Bulanan Pasangan Pemohon
         bln_pendapatan2 = st.number_input(
-            "Pendapatan Bulanan Pasangan Pemohon ($)", value=0)
+            "Pendapatan Bulanan Pasangan Pemohon (Rp)", value=0)
 
         # Jumlah Peminjaman
-        jml_peminjaman = st.number_input("Jumlah Peminjaman", value=0)
+        jml_peminjaman = st.number_input("Jumlah Peminjaman (Rp)", value=0)
 
         # Lama Peminjaman
         dur_display = ['2 Bulan', '6 Bulan', '8 Bulan', '12 Bulan', '16 Bulan']
@@ -93,8 +93,8 @@ def run():
             duration = 360
         if lm_peminjaman == 4:
             duration = 480
-        features = [[jen_kelamin, stat_perkawinan, jml_tanggungan, stat_pendidikan, stat_pekerjaan, bln_pendapatan,
-                     bln_pendapatan2, jml_peminjaman, duration, 1, wil_tinggal]]
+        features = [[jen_kelamin, stat_perkawinan, jml_tanggungan, stat_pendidikan, stat_pekerjaan, bln_pendapatan/14500,
+                     bln_pendapatan2/14500, jml_peminjaman/14500, duration, 1, wil_tinggal]]
         print(features)
         prediction = model.predict(features)
         lc = [str(i) for i in prediction]
